@@ -10,6 +10,12 @@
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
+    "paths": { 
+      "rest-in/*": [ "src/adapter/in/rest/*"],
+      "application-service/*": [ "src/application/service/*"],
+      "application-domain/*": [ "src/application/domain/*"],
+      "ports-usecase/*": [ "src/ports/usecase/*"],
+    },
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": true,
