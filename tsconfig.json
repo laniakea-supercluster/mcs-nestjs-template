@@ -11,10 +11,8 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "paths": { 
-      "rest-in/*": [ "src/adapter/in/rest/*"],
-      "application-service/*": [ "src/application/service/*"],
-      "application-domain/*": [ "src/application/domain/*"],
-      "ports-usecase/*": [ "src/ports/usecase/*"],
+      "@/*": ["src/*"],
+      "@Helper/*": ["src/common/helper/*"]
     },
     "incremental": true,
     "skipLibCheck": true,

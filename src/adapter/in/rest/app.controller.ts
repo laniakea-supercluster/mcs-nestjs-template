@@ -1,13 +1,22 @@
-import { Controller, Get } from '@nestjs/common';
-import { Domain } from 'application-domain/app.domain';
-import { AppService } from 'application-service/app.service';
+import { User } from '@atisio/central/dist/domain/access/user.model';
+import { Controller, Get, Inject } from '@nestjs/common';
+import { Domain } from '@/application/domain/app.domain';
+import { AppUseCase } from '@/ports/usecase/app.usecase';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(
+    @Inject(AppUseCase)
+    private readonly appUseCase: AppUseCase,
+  ) {}
 
-  @Get()
-  getHello(): Domain {
-    return this.appService.getDomain();
+  @Get('/domain')
+  getDomain(): Domain {
+    return this.appUseCase.getDomain();
+  }
+
+  @Get('/user')
+  getUser(): User {
+    return this.appUseCase.getUser();
   }
 }
