@@ -5,10 +5,7 @@ import { AppUseCase } from '@/ports/usecase/app.usecase';
 
 @Controller()
 export class AppController {
-  constructor(
-    @Inject(AppUseCase)
-    private readonly appUseCase: AppUseCase,
-  ) {}
+  constructor(@Inject(AppUseCase) private readonly appUseCase: AppUseCase) {}
 
   @Get('/domain')
   getDomain(): Domain {
