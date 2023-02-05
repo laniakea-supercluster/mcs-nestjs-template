@@ -6,6 +6,6 @@ import { AppUseCase } from '@/ports/usecase/app.usecase';
 @Module({
   imports: [],
   controllers: [AppController],
-  providers: [AppService, { provide: AppUseCase, useExisting: AppService }],
+  providers: [{ provide: AppUseCase, useClass: AppService }],
 })
 export class AppModule {}

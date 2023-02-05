@@ -8,12 +8,12 @@ import { User } from '@atisio/central/dist/domain/access/user.model';
 @Injectable()
 export class AppService implements AppUseCase {
   getDomain(): Domain {
-    return new Domain(uuidv4(), 'Domain Name');
+    return new Domain(uuidv4(), 'System');
   }
 
   getUser(): User {
     const user = new User(uuidv4());
-    user.name = 'Adriano Ferreira';
+    user.name = 'System';
     return user;
   }
 }
