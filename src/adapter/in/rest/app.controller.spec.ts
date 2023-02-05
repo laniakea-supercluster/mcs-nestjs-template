@@ -19,6 +19,7 @@ describe('AppController', () => {
     it('should return "System" for Domain name', () => {
       expect(appController.getDomain().name).toBe('System');
     });
+
     it('should return "System" for User name', () => {
       expect(appController.getDomain().name).toBe('System');
     });
