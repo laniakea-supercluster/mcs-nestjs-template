@@ -13,6 +13,11 @@ jobs:
       matrix:
         node-version: [12.x, 14.x, 16.x, 18.x]
 
+    name: 'build app'
+    steps:
+      - name: Checkout project sources
+        uses: actions/checkout@v3
+
   # steps:
   #   - name: Use Node.js 18.14.0
   #     uses:  actions/checkout@v3
