@@ -11,23 +11,19 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [12.x, 14.x, 16.x, 18.x]
+        node-version: [18.x]
 
     name: 'build app'
     steps:
       - name: Checkout project sources
         uses: actions/checkout@v3
 
-  # steps:
-  #   - name: Use Node.js 18.14.0
-  #     uses:  actions/checkout@v3
-
-  #   # See supported Node.js release schedule at https://nodejs.org/en/about/releases/  
-  #   - name: Use Node.js 18.14.0
-  #     uses: actions/setup-node@v3
-  #     with:
-  #       node-version: 18.14.0
-  #       cache: 'npm'
+      # See supported Node.js release schedule at https://nodejs.org/en/about/releases/  
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
 
   #   - run: npm run build --if-present
   #   - run: npm run lint
