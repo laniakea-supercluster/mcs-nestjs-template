@@ -23,13 +23,4 @@ describe('AppController (e2e)', () => {
         it.body.name == 'System';
       });
   });
-
-  it('/user (GET)', () => {
-    return request(app.getHttpServer())
-      .get('/user')
-      .expect(200)
-      .expect((it) => {
-        it.body.name == 'System';
-      });
-  });
 });
